@@ -1,0 +1,128 @@
+.chatbot-container button,
+.chatbot-bubble {
+  width: auto !important;
+  margin: 0 !important;
+}
+
+/* 💬 Chat bubble */
+.chatbot-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6a5acd;          /* 🎨 Attractive purple-blue */
+  color: white;
+  font-size: 22px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  animation: pulse 1.5s infinite;
+}
+
+/* 🔔 Notification pulse animation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(106,90,205,0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(106,90,205,0); }
+  100% { box-shadow: 0 0 0 0 rgba(106,90,205,0); }
+}
+
+/* 💡 Tooltip */
+.chatbot-tooltip {
+  position: absolute;
+  right: 65px;
+  bottom: 12px;
+  background: #333;
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+/* ✔ Tooltip appears on hover */
+.chatbot-bubble:hover .chatbot-tooltip {
+  opacity: 1;
+}
+
+/* 💬 Chat window */
+.chatbot-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+/* 🟢 Header */
+.chatbot-header {
+  background: #6a5acd;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px 12px 0 0;
+}
+
+/* 💬 Messages area */
+.chatbot-messages {
+  height: 200px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Message bubbles */
+.msg {
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  max-width: 90%;
+}
+
+/* User message */
+.msg.user {
+  background: #e0e7ff;
+  align-self: flex-end;
+}
+
+/* Bot message */
+.msg.bot {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+
+/* ✍ Input area */
+.chatbot-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.chatbot-input input {
+  flex: 1;
+  border: none;
+  padding: 8px;
+  outline: none;
+}
+
+/* Send button */
+.chatbot-input button {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
