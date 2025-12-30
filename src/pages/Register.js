@@ -22,7 +22,7 @@ const Register = () => {
 
     try {
       setLoading(true);
-      await axios.post('http://localhost:5000/api/register', {
+      await axios.post('https://smart-medical-backend-hldq.onrender.com/', {
         email,
         password,
       });
