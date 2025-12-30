@@ -12,7 +12,7 @@ function Login() {
     console.log('Sending:', payload);
 
     try {
-          fetch('https://smart-medical-backend-hldq.onrender.com/api/login', {
+          const response = await fetch('https://smart-medical-backend-hldq.onrender.com/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
