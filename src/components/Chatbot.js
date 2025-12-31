@@ -45,7 +45,7 @@ const Chatbot = () => {
 
     try {
       const res = await axios.post(
-            `${process.env.REACT_APP_API_URL}/api/chatbot`,
+          "https://smart-medical-chatbot.onrender.com/chat",
        {
         message: userMsg.text
       });
